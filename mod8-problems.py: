@@ -1,1 +1,52 @@
+#1. Create a file called gardening_tips.txt and add at least 3 gardening tips to it. Write a Python script that reads a file gardening_tips.txt and prints out each tip one by one.
+def read_gardening_tips(file_path):
+    with open(file_path, 'r') as file:
+        tips = file.readlines()
+        for tip in tips:
+            print(tip.strip())
 
+read_gardening_tips('gardening_tips.txt')
+
+#2. Write a Python program that allows users to log their hiking trips.
+def log_hiking_trips():
+    with open('hiking_log.txt', 'a') as file:
+        while True:
+            hike_name = input("Enter hike name (or 0 to exit): ")
+            if hike_name == '0':
+                break
+            distance = input("Enter distance in miles: ")
+            file.write(f"{hike_name} - {distance} miles\n")
+    
+    with open('hiking_log.txt', 'r') as file:
+        print("\nHiking Log Contents:")
+        print(file.read())
+
+log_hiking_trips()
+
+#3. Create a text file called song_lyrics.txt and copy the lyrics of a song into it.
+def count_word_frequency():
+    with open('song_lyrics.txt', 'r') as file:
+        lyrics = file.read().lower()  
+    
+    word_count = {}
+    for _ in range(5):
+        word = input("Enter a word to count: ").lower()
+        word_count[word] = lyrics.split().count(word)
+    
+    print("\nWord Frequency Count:")
+    print(word_count)
+
+count_word_frequency()
+
+#4. Create a poll.txt file that contains a list of "yea" or "nay" votes separated by commas.
+def count_votes():
+    with open('poll.txt', 'r') as file:
+        votes = file.read().strip().split(',')  
+    
+    yea_count = votes.count('yea')
+    nay_count = votes.count('nay')
+    
+    print(f"Yea votes: {yea_count}")
+    print(f"Nay votes: {nay_count}")
+
+count_votes()

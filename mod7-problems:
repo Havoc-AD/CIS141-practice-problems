@@ -1,1 +1,70 @@
+#1. Write a function called count_vowels(input) that takes a string and returns the number of vowels (a, e, i, o, u) in it
+def count_vowels():
+    input_phrase = input("Enter a phrase to count the vowels: ")
+    vowels = "aeiouAEIOU"
+    count = 0
 
+    for char in input_phrase:
+        if char in vowels:            
+            count += 1            
+    return count
+print(count_vowels())
+
+#2. Write a function called is_palindrome(s) that checks whether a string is a palindrome (reads the same forward and backward, ignoring case). The function should returns either True or False
+def is_palindrome():
+    s = input("Enter a word to check if it's a palindrome: ")
+    
+    s = s.lower()
+    
+    return s == s[::-1]
+
+print(is_palindrome())
+
+#3. In the game Pokemon, certain types of Pokemon do extra damage to other types.
+   def type_advantage():
+    attacker = input("Enter the attacker's type: ")
+    defender = input("Enter the defender's type: ")
+
+    if attacker == "Water" and defender == "Fire":
+        return "Super Effective"
+    elif attacker == "Fire" and defender == "Water":
+        return "Not Very Effective"
+    elif attacker == "Electric" and defender == "Grass":
+        return "Neutral"
+    else:
+        return "Neutral"  
+
+print(type_advantage())
+
+#4. Write a function called ferry_fare(age, vehicle) that calculates the Washington State Ferry fare
+def ferry_fare():
+    age = int(input("Enter your age: "))
+    vehicle_input = input("Do you have a vehicle? (Yes/No): ").strip().lower()
+    vehicle = vehicle_input == "yes"
+    if 19 <= age <= 64:  
+        if vehicle:
+            return 20  
+        else:
+            return 10  
+    elif age >= 65:  
+        if vehicle:
+            return 15  
+        else:
+            return 5  
+    else:  
+        return 0  
+print(ferry_fare())
+
+#5. Write a function called level_up(experience) that takes a player's experience points
+def level_up():
+    experience = int(input("Enter your experience points: "))
+    
+    if 0 <= experience <= 99:
+        return 1  
+    elif 100 <= experience <= 199:
+        return 2  
+    elif experience >= 200:
+        return 3  
+    else:
+        return "Invalid XP"  
+print(level_up())
